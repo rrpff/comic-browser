@@ -11,16 +11,18 @@ export default class Reader extends Component {
 
     if (!reader.active) return <article />
 
+    const previous = () => { scroll(0, 0); actions.previous() }
+    const next = () => { scroll(0, 0); actions.next() }
     const visiblePages = reader.currentGroup.map(page =>
       <ReaderPage image={page.image} format={page.format} key={page.image} />
     )
 
     return (
       <article className={style.reader}>
-        <ReaderControlOverlay previous={actions.previous} next={actions.next} />
+        <ReaderControlOverlay previous={previous} next={next} />
         <ReaderTitle title={reader.title} />
         {visiblePages}
-        <ReaderControls previous={actions.previous} next={actions.next} />
+        <ReaderControls previous={previous} next={next} />
       </article>
     )
   }
