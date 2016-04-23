@@ -1,0 +1,14 @@
+.side {
+  height: 100%;
+  position: fixed;
+  width: 50%;
+  top: 0;
+}
+
+.left {
+  left: 0;
+}
+
+.right {
+  right: 0;
+}
